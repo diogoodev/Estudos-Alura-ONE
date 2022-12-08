@@ -4,19 +4,10 @@ Repositório para acompanhar meu progresso durante o curso ONE, promovido pela O
 ## Plano de estudos
 | Ferramenta                                 | Link                                                                                                          |
 |--------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-|  Trello                                    | [Formção Iniciante](https://trello.com/b/iM3t6hcQ/one-forma%C3%A7%C3%A3o-iniciante-em-programa%C3%A7%C3%A3o)  | 
-
+|  Trello                                    | [Formação Iniciante](https://trello.com/b/j9MO3U1u/t4-trilha-iniciante-em-programa%25C3%25A7%25C3%25A3o)      | 
 
 ## Anotações
-- [HTML](notas/html-tags.md)
-[//]: <
-(notas/html-tags.md)
-- [CSS](anotacoes/css.md)
-- [Linux](anotacoes/linux.md)
-- [PHP](anotacoes/php.md)
-- [GIT](anotacoes/git.md)
-- [POO](anotacoes/poo.md)
->
+- [HTML]
 
 ## Cursos
 | Cursos                                     | Link                                                                                        |
