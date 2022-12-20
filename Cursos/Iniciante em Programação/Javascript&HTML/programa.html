@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  document.write('A idade do diogo é <br> 18'); // instrução está toda em letra minúscula e não podemos sair desse padrão, caso contrário nosso programa não funcionará.Um ponto a destacar é que a passagem do texto que será exibido na tela segue a mesma estrutura de quando usamos a instrução alert. Temos a abertura de um parênteses, o texto e o fechamento do parênteses. É claro que como estamos executando uma instrução, usamos o ponto e vírgula no final para indicar onde ela termina.
+  document.write(18); // no write é aceito tando o tipo string(texto) como o tipo numero(number)
+  document.write('18' + '20'); // quando utizamos as aspas o js entende como texto, e nesse caso imprimi 1820 como resultado
+  document.write('18' + 20); // quando utizamos as aspas o js entende como texto e quando misturamos com um numero ele faz a converção de tudo para a texto, e nesse caso imprimi 1820 como resultado.
+
+  //calculando a media das idades
+  document.write('Calcular a media de idade');
+  document.write(10 + 22 + 29 / 3); // muito cuidado ao relizar operaçãoes nesse casso o resultado não será correto por conta da ordem de precendencia. Para obter a media é preciso ultilar os parenteses.
+  document.write((10 + 22 + 29) / 3); // agora sim! séra apresentado o valor correto da media das idades.
+
+  // podemos concatenar para melhorar a legibilidade do codigo
+  document.write('Calcular a media das idades' + (20 + 20 + 30) / 3);
+</script>

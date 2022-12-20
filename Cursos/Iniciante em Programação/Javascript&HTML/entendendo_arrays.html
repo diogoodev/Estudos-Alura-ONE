@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button>Comparar com o numero secreto</button>
+  </body>
+</html>
+<script>
+  // vamos criar um array usando o colchetes para isso.
+
+  var segredo = [5, 7, 8, 10];
+
+  // lembrar que em um array a posição começa do 0, no caso o numero 5 está na posição 0 do meu array. Quando queremos acessar um elemento específico do array, precisamos passar seu índice, ou seja, sua posição na lista. Contudo, precisamos estar muito atentos porque os índices do array começam de 0 até o tamanho do array menos um.
+
+  var input = document.querySelector('input');
+  input.focus();
+
+  function verifica() {
+    // array.length retornar o tamanho do array, e isso facilita na hora em que precisamos verificar todos os elementos do array, além de permitir adicionarmos mais segredos sem precisar alterar  a condição do loop
+
+    var achou = false;
+    // criamos uma variável para garantir uma única exibição da mensagem de errou
+    for (var posicao = 0; posicao < segredo.length; posicao++) {
+      if (input.value == segredo[posicao]) {
+        alert('Você acertou');
+        achou = true;
+        break; // adicionamos o break para parar caso o usuário acerte.
+      }
+    }
+    // adicionamos um if fora do for para fazer a verificação de erro, fazemos isso para garantir que vamos exibir apenas uma vez se o usuário erou
+    if (achou == false) {
+      alert('Você Errou!!! ');
+    }
+
+    input.value = '';
+    input.focus();
+  }
+
+  var verify = document.querySelector('button');
+
+  verify.onclick = verifica;
+
+  // declarando um array
+
+  // tipos de dados
+  var nome = 'Regina'; // texto, ou tecnicamente falando, uma string
+  var idade = 22; // número
+  var temCarteira = true; // booliano
+  var coisas = ['Gisele', 12, true]; // array -  permite misturar os tipos de dados
+
+  /*   Todo array é declarado com colchetes, o famoso []. Contudo se tivermos uma declaração desta forma var coisas = []; temos um array, ou seja, uma lista vazia sem qualquer elemento.
+
+  Podemos, no momento da declaração de um array, adicionar elementos. Esses elementos podem ser de qualquer tipo conhecido do JavaScript.
+      */
+
+  // exercício 01
+
+  /*  var jogadores = ['Saladino', 'Cage', 'Xur', 'Rayson'];
+  for (var i = 1; i < jogadores.length; i++) {
+    alert(jogadores[i]);
+  }
+  Qual é o problema do código de Jiba? Como você pode alterá-lo para que ele exiba todos os nomes da lista sem deixar nenhum de fora? */
+  // Vamos alterar a variável de incremento i para zero, fazendo assim com que todo o array seja percorrido
+  var jogadores = ['Saladino', 'Cage', 'Xur', 'Rayson'];
+  for (var i = 0; i < jogadores.length; i++) {
+    alert(jogadores[i]);
+  }
+
+  // exercício 02
+  /* 
+  var letras = ['A', 'B', 'C', 'D'];
+
+  for( var i = 0; i <= letras.length; i++ ) {
+    alert(letras[i]);
+    }
+  A lista possui apenas quatro elementos e que foram exibidos cinco alertas! Inclusive o valor do último foi undefined. Com certeza ele é um estranho no ninho.
+
+  Ajude Claudete a corrigir o código de Bruno apontando o problema no seu código */
+
+  var letras = ['A', 'B', 'C', 'D'];
+  // Para corrigir basta retirar o menor igual  <= e colocar apenar o menor <. Assim garantimos que o alert percorra apenas o tamanho do array.
+  for (var i = 0; i < letras.length; i++) {
+    alert(letras[i]);
+  }
+</script>

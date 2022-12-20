@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body>
+    <h2>Interações</h2>
+    <p>Cique nos botões para interagir com os codigos</p>
+    <p>Digite a sua mensagem de despedida <input type="despedida" /></p>
+    <button>exibir</button>
+  </body>
+</html>
+<script>
+  var input = document.querySelector('input');
+
+  function exibeTexto() {
+    alert(input.value); // Quando a função exibeTexto for chamada, ela passará como parâmetro da função alert o valor input.value. Não podemos passar simplesmente input, porque o input corresponde a TAG e queremos dessa TAG seu valor (value). Por isso passamos input.value
+  }
+
+  var button = document.querySelector('button');
+  button.onclick = exibeTexto;
+</script>

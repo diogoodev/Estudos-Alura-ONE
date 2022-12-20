@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body>
+    <input type="numero" />
+    <button>Compare com o meu segredo</button>
+  </body>
+</html>
+<script>
+  // Jogo Adivinha Mais
+  // obejetivo criar um app que pega o input do usuario e compara com um numero, apos isso mostra o resultado.
+  var segredo = Math.round(Math.random() * 10);
+  var input = document.querySelector('input');
+  input.focus(); // Utilizaremos a querySelector() para inserir aquilo que está no mundo HTML na variável input. Ela receberá como parâmetro o nome da tag que desejamos. Isso permite trabalharmos com o <input> no universo JavaScript. O nome da variável não importa, podemos escolher qualquer um, apenas precisamos nos atentar ao nome da tag, que deve ser passado exatamente como é para o querySelector() poder acessá-lo
+  function verifica() {
+    // declaramos uma fução para evitar que o javascript execute o codigo junto ao carregamento do html
+    if (input.value == segredo) {
+      // Para sabermos qual o valor que está inserido na variável, utilizaremos o input.value
+      alert('Você acertou!');
+    } else {
+      alert('Você errou!!');
+    }
+    input.value = ''; // colocamos o input.value para receber uma string vazia e com isso limpar o campo para que possamos inserir um novo valor
+    input.focus(); //Fazemos com que o foco fique  no campo de texto sempre que o usuário errar o número
+  }
+  // agora vamos associar a função ao clique do botão para que ocorra a comparação
+
+  var button = document.querySelector('button');
+  button.onclick = verifica; // não chamamos a função, pois queremos que ela seja chamada na hora do clique e por isso usamos o onclick recebendo a função.
+
+  // RESUMO
+</script>

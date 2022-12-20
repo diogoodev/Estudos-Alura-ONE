@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body>
+    <h1>Media de idades</h1>
+  </body>
+</html>
+<script>
+  function pulaLinha() {
+    document.write('<br><br>');
+  }
+  function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+  }
+
+  /* var idadeDiogo = 26;
+   var idadeRaquel = 44;
+   var idadeRosa = 59;
+   var idadeVilma = 50;
+
+   var totalIdades = (idadeDiogo + idadeRaquel + idadeRosa + idadeVilma) / 4;
+
+   var mediaIdades = totalIdades / 4;
+  */
+  // podemos melhorar  a escrita do programa
+
+  // porem o programa apresenta um erro
+  /*  var totalFamilia = parseInt(prompt('Qual o tortal de familiares?'));
+
+  var quantidade = 1;
+
+  while (quantidade <= totalFamilia) {
+    var totalIdades = 0; // essa variavel que é incrementanda não pode ser colocoda dentro do while
+    var idade = parseInt(prompt('Informe a idade do familiar?'));
+    totalIdades = totalIdades + idade;
+    quantidade++
+  }
+  var mediaIdades = totalIdades / totalFamilia;
+  mostra('A media das idades dos familiares é ' + mediaIdades);
+  mostra('Fim');
+ */
+  // reescrevendo
+
+  var totalFamilia = parseInt(prompt('Qual o tortal de familiares?'));
+
+  var quantidade = 1;
+
+  var totalIdades = 0;
+
+  while (quantidade <= totalFamilia) {
+    var idade = parseInt(prompt('Informe a idade do familiar?'));
+    totalIdades = totalIdades + idade;
+    quantidade++;
+  }
+  var mediaIdades = totalIdades / totalFamilia;
+
+  mostra('A media das idades dos familiares é ' + mediaIdades);
+
+  mostra('Fim');
+
+  // Kauan não construiu o programa corretamente, pois tinha que estudar para a prova de Cálculo 3 na faculdade e acabou cometendo um equívoco. Essa falha resultará no cálculo errado da média.
+  
+//  Qual o problema do código de Kauan? Altere o código para que funcione corretamente deixando sua irmã feliz.
+
+  /*   var totalDeEventos = parseInt(prompt("Informe o total de eventos"));
+
+var contador = 1;
+
+while(contador <= totalDeEventos) {
+
+    var totalGastoComEventos = 0;
+    var gasto = parseFloat(prompt("Informe total gasto com evento"));
+    totalGastoComEventos = totalGastoComEventos + gasto;
+    contador++;
+}
+
+var media = totalGastoComEventos / totalDeEventos;
+
+mostra("A média de gastos é " + media);
+ */
+  var totalDeEventos = parseInt(prompt('Informe o total de eventos'));
+
+  var contador = 1;
+  var totalGastoComEventos = 0;
+
+  while (contador <= totalDeEventos) {
+    var gasto = parseFloat(prompt('Informe total gasto com evento'));
+    totalGastoComEventos = totalGastoComEventos + gasto;
+    contador++;
+  }
+
+  var media = totalGastoComEventos / totalDeEventos;
+
+  mostra('A média de gastos é ' + media);
+</script>

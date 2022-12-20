@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function pulaLinha() {
+    document.write('<br><br>');
+  }
+  function mostra(frase) {
+    document.write(frase);
+  }
+  function calculaImc(altura, peso) {
+    return peso / (altura * altura); // Nesse caso o javascript faz o calculo e retorna o valor
+  }
+
+  var imcFlavio = calculaImc(1.71, 73);
+  // a variavel imcFlavio recebe o calculaImc, para isso ele executa a função e "subistitui" pelo que a furnção retorna.
+  var imcAmigo = calculaImc(1.72, 68);
+  var totalImc = imcAmigo + imcFlavio;
+  mostra(imcFlavio);
+  mostra(imcAmigo);
+
+  document.write('A soma dos imcs é: ' + totalImc);
+</script>

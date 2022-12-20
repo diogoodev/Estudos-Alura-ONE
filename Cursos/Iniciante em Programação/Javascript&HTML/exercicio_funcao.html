@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function pulaLinha() {
+    document.write('<br>');
+  }
+  function mostra(frase) {
+    document.write(frase);
+  }
+  function mostrax(frase) {
+    document.write('*******************************');
+    pulaLinha();
+    document.write(frase);
+    pulaLinha();
+  }
+
+  mostrax('BEM-VINDO AO MEU PROGRAMA');
+  mostrax('ELE REALMENTE FUNCIONA');
+  mostrax('EU USEI FUNÇÃO PARA FAZER ISSO');
+
+  /*   Exercicio 1
+  Quantos anos você tem de diferença do seu irmão?
+
+Carlos foi desafiado por sua irmã Ana a desenvolver um código que exibisse a mensagem "Nossa diferença de idade é", e realizasse a concatenação do resultado da subtração da sua idade com a do seu irmão (ou de um amigo). O resultado pode ser negativo, sem dúvida.
+ */
+  var idade1 = 18;
+  var idade2 = 15;
+  mostra('Nossa diferença de idade é ' + idade1 - idade2);
+  pulaLinha();
+
+  /*  Exercicio 2
+ Em média, um casal tem filhos quando atinge a idade de 28 anos. Seguindo essa média, se os portugueses chegaram em 1500 no Brasil, então, a primeira geração de brasileiros surgiu em 1528, a segunda em 1556 e assim por diante. Desde 1500 até o ano atual, quantas gerações se passaram?
+ */
+  var anoChegada = 1500;
+  var idadeGeracao = 28;
+  var anoAtual = 2022;
+  var diferençaChegadaAtual = anoAtual - anoChegada;
+  pulaLinha();
+  mostra(
+    'O numero de gerações é: ' +
+      Math.round(diferençaChegadaAtual / idadeGeracao)
+  );
+</script>

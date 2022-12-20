@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function pulaLinha() {
+    document.write('<br><br>');
+  }
+  function mostra(frase) {
+    document.write(frase);
+  }
+  function calculaImc(peso, altura) {
+    var imc = peso / (altura * altura);
+    mostra('O imc calculado é: ' + imc);
+  }
+  var pesoFlavio = 70;
+  var alturaFlavio = 1.7;
+  var imcFlavio = pesoFlavio / (alturaFlavio * alturaFlavio);
+  document.write('O imc do Flavio é ' + imcFlavio);
+  pulaLinha();
+  var pesoAmigo = 90;
+  var alturaAmigo = 1.9;
+  var imcAmigo = pesoAmigo / (alturaAmigo * alturaAmigo);
+  document.write(' O imc do amigo é ' + imcAmigo);
+  pulaLinha();
+
+  // para evitar esse repetição podemos criar uma função
+
+  calculaImc(pesoFlavio, alturaFlavio); // isso faz o mesmo que as  5 linhas anteriores.
+  pulaLinha();
+  calculaImc(pesoAmigo, alturaAmigo);
+
+  // somando os imc's
+  function calculaSomaDosImc(peso1, altura1) {
+    var imc1 = peso1 / (altura1 * altura1);
+    return imc1;
+    // precisamos definir o return aqui para jogar o valor para as variaveis definidas abaixo
+  }
+  // vamos definir variaveis para recebr os valores calculado pela função
+  var imcFlavio = calculaSomaDosImc(pesoFlavio, alturaFlavio);
+  var imcAmigo = calculaSomaDosImc(pesoAmigo, alturaAmigo);
+  pulaLinha();
+  mostra(imcAmigo);
+  pulaLinha();
+  mostra(imcFlavio);
+  pulaLinha();
+
+  /* RESUMO 
+  O valor de uma variável pode ser retornado por uma função. O problema é que a função por padrão não retorna, então, precisamos explicitar seu retorno através da instrução return. Sendo assim, para que a variável imcFlavio e imcAmigo recebam o resultado da função calculaSomaDosImc, precisamos adicionar a cláusula return dentro do bloco da função calculaSomaDosImc. O que estiver à direita da cláusula return será o valor retornado pela função. */
+</script>

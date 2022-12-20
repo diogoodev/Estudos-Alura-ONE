@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function pulaLinha() {
+    document.write('<br><br>');
+  }
+  function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+  }
+  var numeroPensado = Math.round(Math.random() * 10);
+  var chute = parseInt(prompt('Digite seu chute'));
+
+  if (chute == numeroPensado) {
+    mostra('Você acerteou');
+  } else {
+    mostra('Você errou!');
+  }
+  /* 
+Explicando melhor o funcionamendo do if e else, com exemplo
+ */
+  /* 
+var senha = prompt("Entre com sua senha");
+
+if(senha == "calopsitaazul")
+{
+    alert("Acesso liberado!");    
+}  else{
+
+}
+A condição if precisa receber o resultado de uma operação lógica dentro de seu parênteses.
+
+Além disso, é dentro do seu bloco que indicamos qual ou quais instruções serão executadas se a operação lógica der true.
+
+Veja que temos as duas chaves que iniciam e terminam o bloco if. A instrução else vem logo após o fechamento do bloco if.
+
+Assim como a instrução if, a else também possui seu bloco com as instruções que desejamos executar se a condição if receber false.
+*/
+</script>

@@ -1,0 +1,15 @@
+{
+   "spellright.language": [
+      "pt"
+   ],
+   "spellright.documentTypes": [
+      "markdown",
+      "latex",
+      "plaintext",
+      "javascript"
+   ],
+   "cSpell.language": "en,pt-BR",
+   "cSpell.words": [
+      "Rayson"
+   ]
+}

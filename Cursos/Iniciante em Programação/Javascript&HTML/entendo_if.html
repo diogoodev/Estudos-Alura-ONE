@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function pulaLinha() {
+    document.write('<br><br>');
+  }
+  function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+  }
+  // Utilizando a função parseInt conseguimos converter uma string em numero, como a função prompt sempre retornar o valor no formato string, precisamos aplicar o parseInt para adequar ao nosso problema.
+  var vitorias = parseInt(prompt('Entre com o numero de vitorias'));
+  var empate = parseInt(prompt('Entre com o numero de empate'));
+  //var derrota = parseInt(prompt('Entre com o numero de derrotas'));
+
+  var pontos = vitorias * 3 + empate;
+
+  mostra('os pontos do seu time é ' + pontos);
+  /*  RESUMO
+  prompt() sempre como um texto. Se no texto houver um número e fizermos uma operação de multiplicação ou divisão, o JavaScript converte o texto para número, e é por isso que a multiplicação funciona.
+  Sempre que formos ler uma entrada, e a intenção for trabalhar com números, temos que fazer o parseInt() para que o valor digitado, que por padrão é lido como texto, seja interpretado como um número.
+  */
+
+  // EXEMPLOS parseInt()
+  /*
+  var a = parseInt("10");
+  var b = parseInt("Calopsita");
+  var c = parseInt(10);
+
+  A variável a recebe o número 10 retornado por parseInt. Veja que a função esta recebendo a string "10". Ela converte a string em um número.
+
+  A variável b recebe NaN (not a number) retornado por parseInt. Isso é verdade, porque parseInt está recebendo a string "Calopsita". É impossível converter esse texto para número, pois não há uma representação numérica para ele, como foi o caso de a.
+
+  A variável c recebe 10, número, retornado por parseInt. Quando parseInt recebe um número e não uma string, ele devolve o mesmo número, ou seja, não realiza conversão alguma. Não dá erro, funciona.
+
+  */
+  if (pontos > 28) {
+    // o if espera uma resposta veradeira ou falsa
+    mostra('Seu time está melhor do que no ano passado.');
+  }
+  if (pontos < 28) {
+    mostra('Seu time está pior do que no ano passado.');
+  }
+  if (pontos == 28) {
+    mostra('Seu time está igual ao ano passado.');
+  }
+  /* RESUMO
+    if() só exibirá o mostra() caso o resultado da operação entre parênteses seja true. Precisamos definir que o if() pode ter mais de uma instrução, e pode fazer mais de uma coisa. Para isso, ele deverá ter um bloco, representado pelas chaves ({}):
+    */
+  /*
+   EXEMPLOS
+  a) 1 == 1 (true)
+  b) 10 < 11 (true)
+  c) 1 >= 1 (true)
+  d) 2 <= 1 (false)
+  e) 9 > 8 (true)
+   */
+
+  function calculaImc(altura, peso) {
+    return peso / (altura * altura);
+  }
+
+  var nome = prompt('Informe o seu nome');
+  var alturaInformada = prompt(nome + ', informe sua altura');
+  var pesoInformado = prompt(nome + ', informe seu peso');
+
+  var imc = calculaImc(alturaInformada, pesoInformado);
+
+  mostra(nome + ', o seu IMC é ' + imc);
+  if (imc < 18.5) {
+    mostra('Você está abaixo do peso');
+  }
+  if (imc > 35.5) {
+    mostra('Você está acima do recomendado');
+  }
+  if (imc >= 18.5) {
+    mostra('Você está dentro do peso');
+  }
+
+  /*
+  Mais EXEMPLOS
+  */
+
+  var numero = 10;
+
+  if (numero >= 2 && numero < 12) {
+    alert('ENTROU!');
+  }
+  if (numero >= 10) {
+    alert('ENTROU');
+  }
+</script>

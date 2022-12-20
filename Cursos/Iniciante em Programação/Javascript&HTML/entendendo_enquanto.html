@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function pulaLinha() {
+    document.write('<br><br>');
+  }
+  function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+  }
+  // ENTENDENDO ENQUANTO
+  var limite = parseInt(prompt('Entre com a data limite '));
+  // com a função while conseguimos repetidr comandos
+  // enquanto a afirmação for veradeira o programa ira repetir.
+  var anoCopa = 1930;
+  while (anoCopa <= 2022) {
+    // aqui ele verifica  se ano copa é menor que 2022 e repete enquanto for menor.
+    mostra('Teve copa em ' + anoCopa);
+    anoCopa = anoCopa + 4;
+  }
+</script>

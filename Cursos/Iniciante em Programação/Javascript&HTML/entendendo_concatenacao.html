@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // Na concatencação o javascript le e escreve como resultado da esquerda para direita. Sabendo disso qual o resultado dessas operações?
+  document.write('A' + 'B' + 20 + 10 + 'C' + (5 + 10) + 'D');
+  // ocorrerá o seguinte:
+
+  //!Aqui o javascrip vê os paranteses e dá prioridade para eles, realiza a operação de soma e inicia a concatencação.
+
+  // ("AB" + 20 + 10 + "C" + 15 + "D")
+  // ("AB20" + 10 + "C" + 15 + "D")
+  // ("AB2010" + "C" + 15 + "D")
+  // ("AB2010C" 15 + "D")
+  // ("AB2010C15"+ "D")
+  // ("AB2010C15D")
+
+  // outro exercicio exibindo o numero 182
+  document.write('<br>');
+  document.write(18 + 2);// aqui o resultado é 20, pois temos o numero 18 sendo somando com 2
+  document.write('<br>'); 
+  document.write('18 + 2');// aqui o resultado é 18 + 2, pois tudo é string
+  document.write('<br>');
+  document.write('18' + '2'); // aqui o resultado é  182 pois concatenaará as duas strings
+  document.write('<br>');
+  document.write(180 + 2); // aqui o resultado é  182 pois somara o numero 180 com o numero 2.

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logica</title>
+  </head>
+  <body>
+    <h3>Tabuada</h3>
+  </body>
+</html>
+<script>
+  function pulaLinha() {
+    document.write('<br><br>');
+  }
+  function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+  }
+
+  // ENTENDENDO OUTRAS FORMAS DE REPETIÇÃO
+  /* Repetição while (doidinho pra sair)
+    var multiplicador = 1;
+    // definimos a condição para funcionamento de repetição
+    while (multiplicador <= 10) {
+      mostra(7 * multiplicador); // definimos aqui a nossa repetição
+      multiplicador = multiplicador + 1;
+    }
+    */
+  // Repetição for
+  /* ESTRUTURA BASICA: 
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+  } */
+  // dentro do for temos  a variavel a ser incrementada, a condição e o criterio de incremento da variavel
+  for (var multiplicador = 1; multiplicador <= 10; multiplicador++) {
+    mostra(7 * multiplicador); // definimos aqui a nossa repetição
+  }
+  // dentro do for usamos o pos incremento multiplicar++ que é o mesmo que usar o multiplicar = multiplicar + 1
+
+  /*  Comparando o for() com while()
+Precisaremos de uma variável a ser incrementada, pois caso contrário a condição de repetição jamais será falsa e o programa nunca parará de repetir. No while() ocorre o mesmo, entretanto, a inicialização da variável é externa, e o incremento da variável acontece dentro de seu bloco.
+ */
+
+  // tranformando um while em um for
+
+  /* 
+var contador = 1;
+while(contador <= 10) {
+    alert("Contador atual: " + contador);
+    contador = contador + 1;
+}
+ */
+  for (let contador = 1; contador <= 10; contador++) {
+    alert('Contador atual: ' + contador);
+  }
+  /*   Veja que usamos contador++ no lugar de contador = contador + 1. A primeira forma é muito mais enxuta.
+   */
+
+  // Do for() para o while ()
+
+  /* 
+for( var i = 0; i < 10; i++ ) {
+    alert( "O resultado é " + (2 * i) );
+}
+ */
+  var i = 0;
+  while (i < 10) {
+    mostra('O resultado é: ' + 2 * i);
+    i++;
+  }
+
+  /*   Tanto o while() quanto o for() são utilizados em estruturas criadas para repetir instruções, ou seja, estruturas de loops. A escolha entre um e outro é questão de gosto e legibilidade. Com o tempo você saberá quando um é melhor do que o outro, o importante, neste momento, é conhecer as duas estruturas
+   */
+</script>
