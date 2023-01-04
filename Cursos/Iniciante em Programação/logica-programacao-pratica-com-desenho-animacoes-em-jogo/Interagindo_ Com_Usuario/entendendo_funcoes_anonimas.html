@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    // Declarei as variáveis tela e pincel
+    // tela é o elemento canvas e pincel é o contexto 2D do canvas
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+    // neste momento vamos entender um pouco mais sobre funções anonimas e como elas podem ser uteis
+    // uma breve explicação
+    // Funções anonimas são funções que não tem um nome e são utilizadas como argumentos em outras funções ou como retorno de outras funções.
+    // podemos por exemplo usar uma função anonima como event handler. Assim a função será chamada quando um determinado evento ocorrer, por exemplo quando o usuário clicar em um botão.
+
+    var desenhar = false; // inicialmente, o círculo não deve ser desenhado
+
+    // atribui a função anônima ao evento onmousemove do elemento canvas
+    // a função será chamada toda vez que o mouse for movido sobre o elemento canvas
+    tela.onmousemove = function desenhaCirculo(evento) {
+      var x = evento.pageX;
+      var y = evento.pageY;
+
+      if (desenhar) {
+        pincel.fillStyle = 'green';
+        pincel.beginPath();
+        pincel.arc(x, y, 10, 0, 2 * 3.14);
+        pincel.fill();
+      }
+    };
+
+    // funções anonimas
+    // atribuímos diretamente a função ao evento que desencadeia
+    // atribui funções anônimas aos eventos onmousedown e onmouseup do elemento canvas
+    tela.onmousedown = function () {
+      // define a variável desenhar como true quando o botão esquerdo do mouse é pressionado
+      desenhar = true;
+    };
+    tela.onmouseup = function () {
+      // define a variável desenhar como false quando o botão esquerdo do mouse é pressionado
+      desenhar = false;
+    };
+    //  Isso significa que a variável desenhar será true enquanto o botão esquerdo do mouse estiver pressionado e false quando o botão for solto.
+
+    // outros exemplos de funções anonimas
+    // aqui vamos criar  um botão e atribuir uma função anônima como event handler
+    // para o evento "click" do botão
+    /* var botao = document.getElementById("meuBotao");
+botao.addEventListener("click", function() {
+  console.log("O botão foi clicado!");
+}); */
+
+    // Cria um botão
+    var botao = document.createElement('button');
+
+    // Atribui uma função anônima ao evento de clique do botão
+    botao.onclick = function () {
+      alert('O botão foi clicado!');
+    };
+  </script>
+</html>

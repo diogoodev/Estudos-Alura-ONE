@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="600" height="400"></canvas>
+  </body>
+  <script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    function desenhaQuadradoVerde() {
+      pincel.fillStyle = 'green'; // define a cor de preenchimento como verde
+      pincel.fillRect(0, 0, 100, 100); // preenche o quadrado com a cor verde
+      pincel.fillStroke = 'black'; // adiciona uma borda preta ao quadrado
+      pincel.strokeRect(0, 0, 100, 100); // desenha a borda do quadrado
+      pincel.strokeStyle = 'red'; // define a cor da borda como vermelha
+    }
+    /*  // quadrados internos
+    pincel.fillRect(100, 0, 100, 100);
+    pincel.strokeRect(100, 0, 100, 100);
+
+    pincel.fillRect(200, 0, 100, 100);
+    pincel.strokeRect(200, 0, 100, 100);
+    pincel.fillRect(300, 0, 100, 100);
+    
+    pincel.fillRect;
+    pincel.strokeRect(300, 0, 100, 100); */
+
+    desenhaQuadradoVerde();
+
+    // como podemos fazer a função se repetir alternado a posição do objeto?
+  </script>
+</html>

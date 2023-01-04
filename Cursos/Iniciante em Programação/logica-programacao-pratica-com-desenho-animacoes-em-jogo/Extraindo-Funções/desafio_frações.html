@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="600" height="400"></canvas>
+  </body>
+  <script>
+    /*     Escreva uma função desenhaQuadrado, que recebe x, y, o tamanho e a cor. Cada quadrado desenhado deve utilizar um stroke.
+     */
+    function desenhaQuadrado(x, y, tamanho, cor) {
+      var tela = document.querySelector('canvas');
+      var pincel = tela.getContext('2d');
+      // aqui precisamos usar fillRect, strokeRect, etc
+      pincel.fillStyle = cor;
+      pincel.strokeStyle = 'black';
+      pincel.fillRect(x, y, tamanho, tamanho);
+      /* O método strokeRect() do canvas é usado para desenhar um retângulo com uma borda ao redor dele. Ele recebe quatro argumentos:
+
+context.strokeRect(x, y, width, height);
+Onde:
+
+x e y são as coordenadas do canto superior esquerdo do retângulo.
+width é a largura do retângulo.
+height é a altura do retângulo. 
+
+É importante lembrar que o método strokeRect() só desenha a borda do retângulo, e não o preenche com uma cor. Para preencher o retângulo com uma cor, você pode usar o método fillRect().
+*/
+      pincel.strokeRect(x, y, tamanho, tamanho);
+    }
+
+    // para desenhar um texto usamos a função fillText(), que recebe o texto e as coordenadas no ponto em que deve aparecer:
+    function desenhaTexto(texto, x, y) {
+      var tela = document.querySelector('canvas');
+      var pincel = tela.getContext('2d');
+      pincel.font = '20px Georgia';
+      pincel.fillStyle = 'black';
+      pincel.fillText(texto, x, y);
+    }
+
+    for (let x = 50; x < 350; x = x + 100) {
+      desenhaQuadrado(x, 40, 100, 'green');
+    }
+    desenhaQuadrado(350, 40, 100, 'white');
+
+    desenhaTexto('Qual é a fração?', 50, 30);
+  </script>
+</html>

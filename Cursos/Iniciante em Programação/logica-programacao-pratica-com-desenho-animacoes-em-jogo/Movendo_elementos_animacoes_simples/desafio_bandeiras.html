@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    // Declarei as variáveis tela e pincel
+    // tela é o elemento canvas e pincel é o contexto 2D do canvas
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    // Declara a variável "troca" para controlar qual bandeira deve ser exibido
+    var troca = true;
+
+    function desenhaBandeiraBrasil() {
+      // fundo da bandeira
+      pincel.fillStyle = 'green';
+      pincel.fillRect(0, 0, 600, 400);
+
+      // losango
+      pincel.fillStyle = 'yellow';
+      pincel.beginPath();
+      pincel.moveTo(50, 200);
+      pincel.lineTo(300, 50);
+      pincel.lineTo(550, 200);
+      pincel.lineTo(300, 350);
+      pincel.fill();
+
+      // circulo
+      pincel.fillStyle = 'blue';
+      pincel.beginPath();
+      pincel.arc(300, 200, 100, 0, 2 * Math.PI);
+      pincel.fill();
+      troca = false;
+    }
+
+    function desenhaBandeiraAlemanha() {
+      // Preto
+      pincel.fillStyle = 'black';
+      pincel.beginPath();
+      pincel.moveTo(0, 0);
+      pincel.lineTo(600, 0);
+      pincel.lineTo(600, 133);
+      pincel.lineTo(0, 133);
+      pincel.fill();
+      //vermelho
+      pincel.fillStyle = 'red';
+      pincel.beginPath();
+      pincel.moveTo(0, 133);
+      pincel.lineTo(600, 133);
+      pincel.lineTo(600, 266);
+      pincel.lineTo(0, 266);
+      pincel.fill();
+      //Amarelo
+      pincel.fillStyle = 'yellow';
+      pincel.beginPath();
+      pincel.moveTo(0, 266);
+      pincel.lineTo(600, 266);
+      pincel.lineTo(600, 400);
+      pincel.lineTo(0, 400);
+      pincel.fill();
+      troca = true;
+    }
+
+    /*     Você deve mostrar a bandeira do Brasil por 3 segundos e depois da Alemanha, sempre intercalando! Para tal, tente escrever uma função trocaBandeira e use a função setInterval para chamá-la a cada 3 segundos.
+
+ */
+    // função que efetuará a troca das bandeiras
+    function trocaBandeira() {
+      // verifica se a variável troca é verdadeira
+      if (troca) {
+        // se for chama função que desenha a bandeira do brasil
+        desenhaBandeiraBrasil();
+      } else {
+        // se for falsa chama função que desenha a bandeira da Alemanha
+        desenhaBandeiraAlemanha();
+      }
+
+      // dentro de cada função alteramos o valor da variável troca para que aconteça a a alternância a cada 3 segundos.
+    }
+    setInterval(trocaBandeira, 3000);
+  </script>
+</html>

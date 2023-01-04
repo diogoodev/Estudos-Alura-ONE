@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    // Este programa permite que o usuário desenhe círculos na tela
+    // ao pressionar e segurar o botão do mouse. Quando soltar o botão,
+    // o desenho é interrompido. O canvas é preenchido com a cor cinza
+    // no início.
+    // Declarei as variáveis tela e pincel
+    // tela é o elemento canvas e pincel é o contexto 2D do canvas
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var desenhando = false;
+    var x = 0;
+    var y = 0;
+    // Preenche o canvas com a cor cinza
+    pincel.fillStyle = 'grey';
+    // indica o tamanho do canvas
+    pincel.fillRect(0, 0, 600, 400);
+    // função que desenha um circulo enquanto o botão do mouse está pressionado
+
+    function desenha(evento) {
+      desenhando = true;
+    }
+    function naoDesenha(evento) {
+      desenhando = false;
+    }
+    //tela.onmousemove = desenhaCirculo;
+    /* 
+  Função que desenha um círculo enquanto o botão do mouse está pressionado.
+  Recebe um evento como parâmetro, que contém informações sobre a posição do mouse.
+*/
+    function desenhaCirculo(evento) {
+      // pega as coordenadas do mouse
+      if (desenhando) {
+        x = evento.pageX - tela.offsetLeft;
+        y = evento.pageY - tela.offsetTop;
+        // preenche com a cor azul
+        pincel.fillStyle = 'blue';
+        // inicia um novo caminho
+        pincel.beginPath();
+        // coordenadas do circulo que será formado
+
+        pincel.arc(x, y, 10, 0, 2 * 3.14);
+        // preenche o nosso desenho
+        pincel.fill();
+
+        console.log(x + ',' + y);
+      }
+    }
+    tela.onmousedown = desenha;
+    tela.onmousemove = desenhaCirculo;
+    tela.onmouseup = naoDesenha;
+    /*
+          O evento do JavaScript que permite capturar o movimento do mouse, e logo sua coordenada, é o onmousemove, contudo esse evento não é capaz de saber se o botão do mouse está clicando ou não. E agora?
+
+          Existem os eventos, onmousedown e onmouseup. O primeiro é disparado toda vez que o botão esquerdo do mouse é pressionado e o segundo quando ele é solto. Sendo assim, de alguma maneira, nossa função desenhaCirculo só pode desenhar na tela se o botão estiver pressionado, se não estiver, nada acontecerá.
+
+          E agora, como resolver? DICA: as funções passadas para onmousedown e onmouseup podem alterar o valor de uma variável, que será usada por desenhaCirculo para saber se ele desenhará ou não um círculo.
+           */
+  </script>
+</html>

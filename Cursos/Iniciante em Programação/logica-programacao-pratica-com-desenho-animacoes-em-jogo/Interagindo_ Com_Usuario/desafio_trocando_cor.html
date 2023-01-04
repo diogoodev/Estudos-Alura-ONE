@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    // Declarei as variáveis tela e pincel
+    // tela é o elemento canvas e pincel é o contexto 2D do canvas
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    // Preenche o canvas com a cor cinza
+    pincel.fillStyle = 'grey';
+
+    // define o tamanho do canvas
+    pincel.fillRect(0, 0, 600, 400);
+
+    // Criação de um array de cores permitidas (blue, red, green)
+    var cores = ['blue', 'red', 'green'];
+    // Variável para controlar a cor atual
+    var contador = 0;
+    // Função para desenhar um círculo no canvas, na posição do clique do mouse
+    function desenhaCirculo(evento) {
+      // Obtém as coordenadas x e y do clique, subtraindo o tamanho do canvas
+      var x = evento.pageX - tela.offsetLeft;
+      var y = evento.pageY - tela.offsetTop;
+
+      // Configura a cor de preenchimento da bola com base na cor atual
+      pincel.fillStyle = cores[contador];
+
+      // Inicia um novo caminho de desenho
+      pincel.beginPath();
+      // Desenha uma bola de raio 10 na posição x e y
+      pincel.arc(x, y, 10, 0, 2 * 3.14);
+      // Preenche a bola com a cor especificada
+      pincel.fill();
+      //console.log(x + ',' + y);
+      console.log(contador);
+    }
+
+    // Atribuição da função desenhaCirculo à propriedade onclick do elemento canvas
+    tela.onclick = desenhaCirculo;
+
+    // Função para mudar a cor atual ao clicar com o botão direito do mouse
+    // O evento oncontextmenu é disparado quando o botão direito do mouse é clicado
+    function mudaCor() {
+      // Incrementa o contador de cores
+      contador++;
+
+      // Se o contador ultrapassar o tamanho do array de cores, volta para o início
+      if (contador >= cores.length) {
+        contador = 0;
+      }
+
+      // Retorna false para evitar que o menu contextual padrão seja exibido
+      return false;
+    }
+
+    // Atribuição da função mudaCor à propriedade oncontextmenu do elemento canvas
+    tela.oncontextmenu = mudaCor;
+  </script>
+</html>

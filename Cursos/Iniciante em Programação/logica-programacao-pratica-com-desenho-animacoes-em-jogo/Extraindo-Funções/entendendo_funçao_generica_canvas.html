@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="600" height="400"></canvas>
+  </body>
+  <script>
+    // como podemos fazer a função se repetir alternado a posição do objeto?
+
+    // para responder essa pergunta vamos criar uma função mais generalista
+    // vamos definir como parâmetro, a coordenada que queremos que se inicie
+    function desenhaQuadrado(x, y, cor) {
+      var tela = document.querySelector('canvas');
+      var pincel = tela.getContext('2d');
+
+      pincel.fillStyle = cor;
+      pincel.fillRect(x, y, 100, 100);
+      pincel.fillStroke = 'black'; // adiciona uma borda
+      pincel.strokeRect(x, y, 100, 100);
+      pincel.strokeStyle = 'red';
+    }
+    /*  // quadrados internos
+    pincel.fillRect(100, 0, 100, 100);
+    pincel.strokeRect(100, 0, 100, 100);
+
+    pincel.fillRect(200, 0, 100, 100);
+    pincel.strokeRect(200, 0, 100, 100);
+    pincel.fillRect(300, 0, 100, 100);
+    
+    pincel.fillRect;
+    pincel.strokeRect(300, 0, 100, 100); */
+
+    // na chamada da função definimos o valor
+
+    /* var x = 0;
+    while (x < 600) {
+      desenhaQuadrado(x, 0, 'yellow');
+      x = x + 100;
+    } */
+
+    for (let x = 0; x < 600; x = x + 100) {
+      desenhaQuadrado(x, 0, 'yellow');
+      //x é uma variável, ou seja, um espaço na memória onde podemos guardar valores e utilizá-los no código. Então, se a variável x guarda o valor 0 no início do código, em todos os lugares onde passarmos x no código, o programa vai automaticamente substituir pelo valor de 0. Essa lógica continua funcionando depois de modificarmos o valor de x, por exemplo com a instrução x = x + 50;.
+    }
+
+    //Ao chamarmos a função desenhaQuadradoVerde() e passarmos 0 como parâmetro, este número ocupa o parâmetro x e é utilizado na coordenada X do fillRect e do strokeRect. O mesmo acontece com a coordenada y.
+
+    //podemos também passar a cor para a nossa função
+  </script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>JOGO DE ADIVINHAÇÃO</h2>
+    <h4>
+      Insira um valor e tente adivinhar um dos números que foram gerados
+      aleatoriamente!
+    </h4>
+    <input type="number" />
+    <button>Ver resultado</button>
+    <p></p>
+  </body>
+  <script>
+    // desenvolver um jogo de adivinhação que gera um conjunto de números que não se repetem
+    var input = document.querySelector('input');
+    input.focus();
+
+    var button = document.querySelector('button');
+
+    var senhas = [];
+
+    // sorteando um numero
+    function sorteia() {
+      return Math.round(Math.random() * 10);
+    }
+    // inserir os números sorteados no array
+    // garantir que não sejam repetidos
+    // garantir que não seja zero
+
+    function repetir(quantidade) {
+      var number = 0;
+      // var sort = sorteia();
+      //      0         5
+
+      while (number < quantidade) {
+        var existe = false;
+        var sort = sorteia(); // criamos uma variável apenas para receber o valor da função sorteia, assim podemos comparar depois com os intens do array
+        if (sort != 0) {
+          for (var posicao = 0; posicao < senhas.length; posicao++) {
+            if (senhas[posicao] == sort) {
+              existe = true;
+              break;
+            }
+          }
+          if (existe == false) {
+            senhas.push(sort);
+            number++;
+          }
+        }
+      }
+      return senhas;
+    }
+    var chama = repetir(5);
+
+    function verifica() {
+      var numeroDigitado = input.value;
+      input.focus();
+
+      var achou = false;
+
+      for (var posicao = 0; posicao < senhas.length; posicao++) {
+        if (numeroDigitado == senhas[posicao]) {
+          alert('Você acertou PARABÉNS!!');
+
+          achou = true;
+
+          posicao++;
+        }
+      }
+      if (achou == false) {
+        alert('Macacos me mordam você errou');
+      }
+    }
+    button.onclick = verifica;
+    console.log(senhas);
+
+    // preciso pegar o numero digitado e usar em outras funções
+  </script>
+</html>

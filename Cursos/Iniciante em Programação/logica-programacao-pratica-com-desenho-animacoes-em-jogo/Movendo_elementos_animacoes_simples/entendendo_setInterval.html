@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    // Declarei as variáveis tela e pincel
+    // tela é o elemento canvas e pincel é o contexto 2D do canvas
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio) {
+      pincel.fillStyle = 'blue';
+      pincel.beginPath();
+      pincel.arc(x, y, raio, 0, 2 * Math.PI);
+      pincel.fill();
+    }
+    function limpaTela() {
+      pincel.clearRect(0, 0, 600, 400);
+    }
+    //limpaTela();
+
+    /*  vamos usar o método setInterval(() => {
+
+    }, interval);
+     para delimitar um tempo que a nossa função deve ser chamada, para isso passamos o nome da função sem chama-la pois o js fara isso por nos, e depois passamos o tempo.
+    */
+    // declacra uma varivel chamada x com o valor inicial de 20
+    var x = 20;
+    //declara uma função chamada atualizaTela
+    function atualizaTela() {
+      // chama a função limpaTela para limpar a tela
+      limpaTela();
+      // chama a função desenhaCirculo para desenhar um circulo na tela
+      desenhaCirculo(x, 20, 10);
+      // incrementa a variável x em 1
+      x++;
+    }
+    // Chama a função "setInterval" para chamar a função "atualizaTela" a cada 20 milissegundos
+    setInterval(atualizaTela, 20);
+  </script>
+</html>

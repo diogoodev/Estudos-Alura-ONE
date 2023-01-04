@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    // Declarei as variáveis tela e pincel
+    // tela é o elemento canvas e pincel é o contexto 2D do canvas
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    // cria um fundo cinza no canvas
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    // Variável para armazenar o raio da bola
+    var somaBolinha = 10;
+
+    // Função para desenhar um círculo no canvas, na posição do clique do mouse
+    function desenhaCirculo(evento) {
+      // Obtém as coordenadas x e y do clique, subtraindo o tamanho do canvas
+      var x = evento.pageX - tela.offsetLeft;
+      var y = evento.pageY - tela.offsetTop;
+      // Configura a cor de preenchimento da bola como azul
+      pincel.fillStyle = 'blue';
+
+      // Inicia um novo caminho de desenho
+      pincel.beginPath();
+
+      // Minha solução
+      // Verifica se a tecla shift está pressionada
+      if (evento.shiftKey == true) {
+        // Se estiver, aumenta o raio da bola em 10
+        somaBolinha = somaBolinha + 10;
+
+        // Desenha um círculo na posição x e y, com o raio especificado
+        pincel.arc(x, y, somaBolinha, 0, 2 * 3.14);
+        pincel.fill();
+      } else {
+        pincel.arc(x, y, somaBolinha, 0, 2 * 3.14);
+        pincel.fill();
+      }
+      // Exibe as coordenadas x e y no console
+      console.log(x + ',' + y);
+    }
+
+    // Atribuição da função desenhaCirculo à propriedade onclick do elemento canvas
+    tela.onclick = desenhaCirculo;
+  </script>
+</html>

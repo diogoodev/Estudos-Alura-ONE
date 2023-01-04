@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    // Declarei as variáveis tela e pincel
+    // tela é o elemento canvas e pincel é o contexto 2D do canvas
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    // preenchemos o canvas com a cor cinza claro
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+    // determinamos a variável raio que será usada para definir o tamanho do raio
+    var raio = 10;
+    // função que desenha o circulo na tela
+    function desenhaCirculo(x, y, raio, cor) {
+      // definimos a cor de preenchimento do circulo
+      pincel.fillStyle = cor;
+      // inciamos um novo caminho para o desenho
+      pincel.beginPath();
+      // desenhamos o circulo usando as coordenadas x e y e o raio como parâmetros
+      pincel.arc(x, y, raio, 0, 2 * Math.PI);
+      // preenchemos o circulo com a cor definida antes.
+      pincel.fill();
+    }
+    // chamamos a função para desenhar 3 círculos
+    desenhaCirculo(300, 200, raio + 20, 'red'); // maior círculo
+    desenhaCirculo(300, 200, raio + 10, 'white');
+    desenhaCirculo(300, 200, raio, 'red'); // menor circulo
+    // função que é chamada quando o usuário clica na tela
+    function dispara(evento) {
+      // armazenamos as coordenadas de onde o usurário clicou
+      var x = evento.pageX - tela.offsetLeft;
+      var y = evento.pageY - tela.offsetTop;
+      console.log(x + ',' + y);
+      // lógica de acerto
+      /* A lógica de acerto é a seguinte. Sabemos que as coordenadas x e y do alvo são 300 e 200, respectivamente, certo? Então, precisamos comparar essas coordenadas com as coordenadas do clique do mouse. O problema é que não podemos testar se o x e y do clique é igual ao x e y do alvo, porque estaríamos obrigando o jogador a clicar exatamente no centro do alvo. Queremos considerar como acerto qualquer coordenada x e y dentro do círculo menor, aquele com raio 10.
+
+      Então, se o x do alvo é 300, qualquer clique entre 290 e 310 é válido. Mas de onde eu tirei essa faixa de acerto? Levando em consideração o raio do círculo. Levo em consideração 10 pontos à esquerda do centro do menor círculo e 10 pontos à direita. Então, basta fazermos a mesma coisa com o y! 
+      */
+      if (x < 310 && x > 290 && y < 210 && y > 190) {
+        alert('voce acertou!');
+      }
+    }
+    // definimos a função dispara como o evento de click do elemento canvas
+    tela.onclick = dispara;
+  </script>
+</html>

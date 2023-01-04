@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    // Declarei as variáveis tela e pincel
+    // tela é o elemento canvas e pincel é o contexto 2D do canvas
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var x = 20;
+    var y = 20;
+
+    // códigos do teclado
+    var esquerda = 37;
+    var cima = 38;
+    var direita = 39;
+    var baixo = 40;
+
+    function desenhaCirculo(x, y, raio) {
+      pincel.fillStyle = 'red';
+      pincel.beginPath();
+      pincel.arc(x, y, raio, 0, 2 * Math.PI);
+      pincel.fill();
+    }
+    function limpaTela() {
+      pincel.clearRect(0, 0, 600, 400);
+    }
+
+    function atualizaTela() {
+      limpaTela();
+      desenhaCirculo(x, y, 20);
+    }
+    setInterval(atualizaTela, 11120);
+    /*     E se fôssemos capazes de mudar o valor de x e y pelo teclado? Se a cada 20 milissegundos a tela é atualizada e a função desenhaCirculo sempre utiliza as variáveis x e y, qualquer mudança nesses valores pelo teclado fará com que o círculo desenhado mude de posição.
+     */
+
+    /*  onkeydown: Evento que permite identificar qual tecla está pressionada. Esse evento é o único capaz de identificar também as setas do teclado */
+
+    // como saber qual tecla foi pressionada?
+    // variável que incrementa nos eixos x e y=
+    var taxa = 10;
+    function leDoTeclado(evento) {
+      // O evento.keycode traz o código da tecla que foi pressionada
+      // declaramos 4 variáveis para capturar cada seta do teclado
+      //
+      if (evento.keyCode == direita) {
+        x = x + taxa;
+      } else if (evento.keyCode == esquerda) {
+        x = x - taxa;
+      } else if (evento.keyCode == cima) {
+        y = y - taxa;
+      } else if (evento.keyCode == baixo) {
+        y = y + taxa;
+      }
+    }
+
+    document.onkeydown = leDoTeclado;
+    // links uteis
+    // Tabela de arrow keys para JavaScript
+    //https://odesenvolvedor.com.br/tabela-de-key-codes-para-javascript_1464.html
+  </script>
+</html>

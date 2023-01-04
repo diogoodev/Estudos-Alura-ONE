@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="600" height="400"></canvas>
+    <!--todo Criar um novo arquivo, por exemplo creeper.html. -->
+    <!--todo Definir a tag canvas. -->
+    <!--todo Criar um script com tela e pincel. -->
+    <!--todo Desenhar os retângulos através da função fillRect do pincel. -->
+    <!--todo Não esquecer de pintar os retângulos, aqui usamos as cores darkgreen e black . -->
+  </body>
+  <script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    // retângulo 1
+    pincel.fillStyle = 'darkgreen';
+    pincel.fillRect(200, 50, 350, 300);
+    // retângulo 2
+    pincel.fillStyle = 'black';
+    pincel.fillRect(250, 100, 90, 90);
+    // retângulo 3
+    pincel.fillStyle = 'black';
+    pincel.fillRect(400, 100, 90, 90);
+    // retângulo 3
+    pincel.fillStyle = 'black';
+    pincel.fillRect(335, 190, 70, 100);
+    // retângulo 4
+    pincel.fillRect(300, 240, 40, 110);
+    // retângulo 5
+    pincel.fillRect(400, 240, 40, 110);
+  </script>
+</html>

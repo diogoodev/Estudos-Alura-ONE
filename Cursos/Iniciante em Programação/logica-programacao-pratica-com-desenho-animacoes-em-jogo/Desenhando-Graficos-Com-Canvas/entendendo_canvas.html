@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <!--  // tag usada para podermos gerar artes com javascript. Conseguimos criar atela de desenho e dizer qual será sua altura e largura.  -->
+  <canvas width="600" height="400"></canvas>
+
+  <script>
+    // definimos a variável que irá receber o canvas do mundo html
+    var tela = document.querySelector('canvas');
+
+    // em seguida usamos a variável pincel para indicar como iramos gerar as imagens
+    var pincel = tela.getContext('2d');
+    // pedimos para que o pincel preencha um retângulo
+    pincel.fillStyle = '#009c3b';
+    //antes de definir a posição precisamos  preencher com uma cor
+    pincel.fillRect(0, 0, 600, 400);
+    // precisamos definir o inicio
+
+    pincel.fillStyle = '#ffdf00';
+    pincel.beginPath();
+    // triangulo
+    //            width,height
+    pincel.moveTo(0, 200);
+    pincel.lineTo(300, 0);
+    pincel.lineTo(600, 200);
+    pincel.lineTo(300, 400);
+    pincel.lineTo(0, 200);
+    pincel.fill();
+    // Um triângulo é um polígono de três lados, mas enquanto o programa receber instruções sucessivas para traçar linhas (com lineTo()) e forem dadas as coordenadas corretas em cada uma, é possível desenhar e preencher polígonos com a quantidade de lados que quisermos.
+
+    // circulo
+    pincel.fillStyle = '#002776';
+    //Temos de iniciar um novo caminho, para diferenciar do caminho anterior
+    pincel.beginPath();
+    pincel.arc(300, 200, 100, 0, 2 * 3.14);
+    pincel.fill();
+  </script>
+</html>

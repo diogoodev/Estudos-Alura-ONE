@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    // Declarei as variáveis tela e pincel
+    // tela é o elemento canvas e pincel é o contexto 2D do canvas
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    // Preenchimento de um retângulo cinza no canvas
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    // Criação de uma função que será chamada pelo navegador após um clique
+    // O parâmetro evento é passado para a função e contém informações sobre o evento de clique
+    function desenhaCirculo(evento) {
+      // Obtém as coordenadas x e y do clique, subtraindo o tamanho do canvas
+      var x = evento.pageX - tela.offsetLeft;
+      var y = evento.pageY - tela.offsetTop;
+
+      // Configura a cor de preenchimento da bola
+      pincel.fillStyle = 'blue';
+      // Inicia um novo caminho de desenho
+      pincel.beginPath();
+
+      // Desenha uma bola de raio 10 na posição x e y
+      pincel.arc(x, y, 10, 0, 2 * 3.14);
+      pincel.fill();
+
+      // Exibe as coordenadas x e y no console
+      console.log(x + ',' + y);
+    }
+    // Atribuição da função desenhaCirculo à propriedade onclick do elemento canvas
+    tela.onclick = desenhaCirculo;
+
+    // descobrir onde o click ocorre
+    // passamos parâmetro para nossa função, com isso conseguímos identificar onde o evento ocorre.
+  </script>
+</html>

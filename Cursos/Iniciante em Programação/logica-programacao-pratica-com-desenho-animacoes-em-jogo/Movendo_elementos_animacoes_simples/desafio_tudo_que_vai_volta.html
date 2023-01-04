@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    // Seleciona a tag "canvas" da página HTML
+    var tela = document.querySelector('canvas');
+    // Obtém o contexto de desenho do elemento "canvas"
+    var pincel = tela.getContext('2d');
+    // define a cor de preenchimento
+    pincel.fillStyle = 'lightgrey';
+    // desenha um retângulo na tela com  cor especificada
+    pincel.fillRect(0, 0, 600, 400);
+    // declara a função desenhaCirculo  que desenha um circulo na tela
+    function desenhaCirculo(x, y, raio) {
+      // define a cor de preenchimento como vermelho
+      pincel.fillStyle = 'red';
+      // Inicia um novo caminho
+      pincel.beginPath();
+      // desenha um circulo na tela com as coordenadas e o raio especificados
+      pincel.arc(x, y, raio, 0, 2 * Math.PI);
+      // preenche o circulo com  a cor especificada
+      pincel.fill();
+    }
+    // declara a função limpaTela que limpa tela
+    function limpaTela() {
+      // limpa um retângulo na tela com as coordenadas e dimensões especificadas
+      pincel.clearRect(0, 0, 600, 400);
+    }
+    // declara uma variável chamada x com o valor inicial 20
+    var x = 20;
+    // declara variável responsável pelo sentido da bolinha
+    var sentido = 1;
+    // declara a função desenhar que desenha um circulo na tela e atualiza sua posição
+    function desenhar() {
+      //chama a função limpaTela que limpa a tela
+      limpaTela();
+      // verifica se o valor da variável x é maior que 600
+      if (x > 600) {
+        // se for, altera o valor da variável sentido para -1
+        sentido = -1; //
+        // verifica se a variável x é menor que 0
+      } else if (x < 0) {
+        // se for, altera o valor da variável sentido  para 1
+        sentido = 1;
+      }
+      // chama a função desenhaCirculo para desenhar o circulo na tela
+      desenhaCirculo(x, 20, 10);
+      // atualiza o valor da variável x adicionando o valor da variável sentido
+      x = x + sentido;
+      console.log(x);
+    }
+    // chama a função setInterval para chamar desenhar a cada 10 milissegundos
+    setInterval(desenhar, 10);
+  </script>
+</html>

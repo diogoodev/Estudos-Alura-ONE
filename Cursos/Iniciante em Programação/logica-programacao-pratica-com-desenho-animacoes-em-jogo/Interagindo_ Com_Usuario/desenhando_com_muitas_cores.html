@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+    <br />
+    Escolha uma cor <input type="color" name="cores" id="definir" />
+  </body>
+  <script>
+    // Declarei as variáveis tela e pincel
+    // tela é o elemento canvas e pincel é o contexto 2D do canvas
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    // preenche o canvas com a cor cinza
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var desenhar = false;
+    // para extrair um valor do input primeiro o selecionamos e depois armazenamos.
+    var cores = document.querySelector('input');
+    // função que desenha um circulo na tela
+    function desenhaCirculo(evento) {
+      // variáveis para armazenar a posição do mouse
+      var x = evento.pageX;
+      var y = evento.pageY;
+      // se a variável desenhar estiver com o valor true ela desenha o circulo
+      if (desenhar) {
+        // aqui as cores irão variar de acordo com o que o usuário escolher
+        pincel.fillStyle = cores.value;
+        // inicia um novo caminho
+        pincel.beginPath();
+        // formato para desenhar o circulo
+        pincel.arc(x, y, 10, 0, 2 * 3.14);
+        // preenche o circulo com acor definida antes
+        pincel.fill();
+      }
+    }
+    // quando o mouse se move cham a função para desenhar o circulo
+    tela.onmousemove = desenhaCirculo;
+    // ativa o desenho na tela
+    function habilitaDesenhar() {
+      desenhar = true;
+    }
+    // desativa o desenho na tela
+    function desabilitaDesenhar() {
+      desenhar = false;
+    }
+    // se o botão esquerdo do mouse estiver pressionado desenhara ná dela
+    tela.onmousedown = habilitaDesenhar;
+    // quando o botão esquerdo do mouse é solto para o desenho
+    tela.onmouseup = desabilitaDesenhar;
+  </script>
+</html>

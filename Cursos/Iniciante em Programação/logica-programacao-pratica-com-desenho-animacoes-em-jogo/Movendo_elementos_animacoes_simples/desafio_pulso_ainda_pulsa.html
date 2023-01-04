@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    // Declarei as variáveis tela e pincel
+    // tela é o elemento canvas e pincel é o contexto 2D do canvas
+
+    /*
+      Sua tarefa será fazer uma bolinha pulsar, ou seja, seu raio deve ter tamanho mínimo de 20 e tamanho máximo de 30. Sendo assim, de 20 até 30, o raio deve ser incrementado de um em um e quando o valor do raio ultrapassar o máximo, ele deve sofrer um decremento de um. Contudo, fique alerta, pois se o raio se tornar menor que 20, devemos voltar a incrementá-lo e assim por diante. Para um efeito mais pomposo, use 20 milissegundos na taxa de atualização da tela.
+      */
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio) {
+      pincel.fillStyle = 'red';
+      pincel.beginPath();
+      pincel.arc(x, y, raio, 0, 2 * Math.PI);
+      pincel.fill();
+    }
+
+    function limpaTela() {
+      pincel.clearRect(0, 0, 600, 400);
+    }
+
+    // Declara a variável "raio" para armazenar o raio do círculo
+    var raio = 19;
+
+    // Declara a variável "sentido" para armazenar o sentido de crescimento do círculo
+    var sentido = 1;
+
+    // declara a função "atualizar" para atualizar o tamanho do circulo
+    function atualizar() {
+      // limpa a tela
+      limpaTela();
+
+      // verifica se o raio é menor que 30
+      if (raio > 30) {
+        // se for atribui valor 1 para a variável sentido
+        sentido = -1;
+      }
+
+      // verifica se o raio do circulo é menor que 20
+      else if (raio < 20) {
+        // se for atribui o valor 1 a variável sentido
+        sentido = 1;
+      }
+
+      // atualiza o raio do circulo acrescentando o valor de sentido
+      raio = raio + sentido;
+
+      // desenha na tela com o valor atualizado do raio
+      desenhaCirculo(40, 40, raio);
+    }
+
+    setInterval(atualizar, 80);
+    /* O primeiro é definir o tamanho inicial do raio em uma variável. Além disso, vamos definir uma variável chamada sentido, que começará com 1. Esse sentido é importante, pois é ele que foi usado para incrementar o raio. Se for para a bolinha crescer, usamos um valor positivo, se for para diminuir, usamos um negativo. Depois disso criamos uma função que será a responsável em atualizar nossa tela, redesenhando nosso círculo, que pode crescer ou não. Além disso, como nosso raio começa de 19, o sentido será 1, fazendo com que nossa bolinha cresça, pois o sentido é somado com o raio atual. O valor positivo será utilizado até que o tamanho do raio ultrapasse o limite de 30, fazendo com que sentido seja negativo até que o valor do raio seja menor do que 20.
+
+Em seguida desenhamos nosso círculo com base no valor de raio e chamamos nossa função atualizaTela através da função setInterval do JavaScript, com uma taxa de atualização de 20 milissegundos. */
+  </script>
+</html>
