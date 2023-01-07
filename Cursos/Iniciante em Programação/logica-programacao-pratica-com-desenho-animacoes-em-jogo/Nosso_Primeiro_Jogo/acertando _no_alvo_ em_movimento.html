@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    // Declarei as variáveis tela e pincel
+    // tela é o elemento canvas e pincel é o contexto 2D do canvas
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio, cor) {
+      pincel.fillStyle = cor;
+      pincel.beginPath();
+      pincel.arc(x, y, raio, 0, 2 * Math.PI);
+      pincel.fill();
+    }
+    function limpaTela() {
+      pincel.clearRect(0, 0, 600, 400);
+    }
+
+    function desenhaAlvo(x, y) {
+      desenhaCirculo(x, y, 40, 'red');
+      desenhaCirculo(x, y, 30, 'white');
+      desenhaCirculo(x, y, 10, 'red');
+    }
+    // função responsável por gerar um numero aleatório até o  valor máximo definido pelo parâmetro
+    function sorteiaPosicao(max) {
+      return Math.floor(Math.random() * max);
+    }
+
+    // Variáveis para armazenar as posições x e y aleatórias do alvo
+    var xaleatorio;
+    var yaleatorio;
+
+    //Essa função atualiza a posição e redesenha o alvo na tela
+    function atualizaTela(evento) {
+      // gera posições aleatórias para x e y
+      xaleatorio = sorteiaPosicao(600);
+      yaleatorio = sorteiaPosicao(400);
+
+      // Essa função limpa a tela e redesenha o alvo na nova posição
+      limpaTela();
+      desenhaAlvo(xaleatorio, yaleatorio);
+    }
+
+    // Essa função é chamada quando ocorre um clique na tela
+    function acertou(evento) {
+      // calcula a posição de x e y em relação ao canvas
+      var x = evento.pageX - tela.offsetLeft;
+      var y = evento.pageY - tela.offsetTop;
+
+      // verifica se o clique ocorreu no centro da bolinha menor
+      if (
+        xaleatorio + 10 > x &&
+        xaleatorio - 10 < x &&
+        yaleatorio + 10 > y &&
+        yaleatorio - 10 < y
+      ) {
+        alert('Acertou');
+      }
+    }
+    // aqui o event listener aguarda o click na tela para executar
+    tela.onclick = acertou;
+
+    // chama função atualiza tela a cada 1 segundo para atualizar a posição do alvo
+    setInterval(atualizaTela, 1000);
+
+    // como fazer para ao clicar no centro aparecer que acertou.
+  </script>
+</html>

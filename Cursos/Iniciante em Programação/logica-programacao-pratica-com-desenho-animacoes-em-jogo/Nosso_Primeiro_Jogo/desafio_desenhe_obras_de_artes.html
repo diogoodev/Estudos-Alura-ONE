@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Adicionei um comentário explicando o propósito do elemento canvas -->
+    <canvas width="600" height="400">
+      <!-- Elemento utilizado para desenhar gráficos ou criar jogos com JavaScript -->
+    </canvas>
+  </body>
+  <script>
+    /*
+
+    O desafio desse exercício é trocar a cor utilizada para desenhar o círculo de acordo com o quadrado da cor que clicarmos.
+    Se clicarmos no verde, usaremos a cor verde quando formos desenhar e por aí vai.
+    Outro ponto é que não podemos desenhar em cima da nossa paleta, ou melhor, não podemos desenhar na linha inteira na qual faz parte.
+
+    Para solucionar esse problema, você precisará identificar qual quadrado foi clicado
+    implementando uma lógica de colisão parecida com a que usamos para definir se acertamos um alvo ou não.
+    Veja que como estamos trabalhando com um quadrado, não usamos um raio na lógica de colisão, usamos o tamanho do quadrado, guarde essa dica!
+    */
+
+    // nessa função desenhamos um quadrado
+    function desenhaQuadrado(x, y, tamanho, cor) {
+      pincel.fillStyle = cor;
+      pincel.fillRect(x, y, tamanho, tamanho);
+      pincel.fill();
+    }
+
+    function desenhaCirculo(x, y, raio, cor) {
+      pincel.fillStyle = cor;
+      pincel.beginPath();
+      pincel.arc(x, y, raio, 0, 2 * 3.14);
+      pincel.fill();
+    }
+
+    function desenhaPaletaDeCores() {
+      desenhaQuadrado(xVermelho, yQuadrados, tamanhoQuadrados, 'red');
+      desenhaQuadrado(xVerde, yQuadrados, tamanhoQuadrados, 'green');
+      desenhaQuadrado(xAzul, yQuadrados, tamanhoQuadrados, 'blue');
+    }
+
+    function lidaComMovimentoDoMouse(evento) {
+      x = evento.pageX - tela.offsetLeft;
+      y = evento.pageY - tela.offsetTop;
+      if (desenha && evitaPaleta(x, y)) {
+        desenhaCirculo(x, y, 5, corAtual);
+      }
+    }
+
+    function evitaPaleta(x, y) {
+      if (x >= 0 && x < 150 && y > 0 && y < tamanhoQuadrados) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    function habilitaDesenhar() {
+      desenha = true;
+    }
+
+    function desabilitaDesenhar() {
+      desenha = false;
+    }
+    function capturaCor(evento) {
+      // preciso saber a posição do mouse, comparando com o local e o tamanho dos quadrados para definir a cor que o circulo será desenhado.
+      if (x < tamanhoQuadrados && y < tamanhoQuadrados) {
+        corAtual = 'red';
+      } else if (
+        x < tamanhoQuadrados + 50 &&
+        x > tamanhoQuadrados &&
+        y < tamanhoQuadrados
+      ) {
+        corAtual = 'green';
+      } else if (
+        x < tamanhoQuadrados + 100 &&
+        x > tamanhoQuadrados + 50 &&
+        y < tamanhoQuadrados
+      ) {
+        corAtual = 'blue';
+      }
+    }
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var x;
+    var y;
+    var desenha = false;
+    var corAtual = 'blue';
+    var xVermelho = 0;
+    var xVerde = 50;
+    var xAzul = 100;
+    var yQuadrados = 0;
+    var tamanhoQuadrados = 50;
+
+    desenhaPaletaDeCores(); // mostra os quadrados de seleção de cores
+
+    tela.onmousemove = lidaComMovimentoDoMouse;
+
+    tela.onmousedown = habilitaDesenhar;
+
+    tela.onmouseup = desabilitaDesenhar;
+
+    tela.onclick = capturaCor;
+  </script>
+</html>
