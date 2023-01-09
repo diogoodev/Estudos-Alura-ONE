@@ -1,6 +1,6 @@
 # Estudos-Alura-ONE
 
-Repositório para acompanhar meu progresso durante o curso ONE, promovido pela Oracle e Alura. Vou registrar o conteudo visto durante as aulas, as minhas soluções para os desafios e minha evolução como desenvolvedor Front-End.
+Repositório para acompanhar meu progresso durante o curso ONE, promovido pela Oracle e Alura. Vou registrar o conteúdo visto durante as aulas, as minhas soluções para os desafios e minha evolução como desenvolvedor Front-End.
 
 ## Plano de estudos
 
@@ -10,7 +10,14 @@ Repositório para acompanhar meu progresso durante o curso ONE, promovido pela O
 
 ## Anotações
 
-- [HTML]
+###### _Javascript e HTML: desenvolva um jogo e pratique lógica de programação_
+
+- [Desafio Calculo IMC](Cursos\Iniciante em Programação\Javascript&HTML\calculando_imc.html)
+- [Desafio Calculando gastos](Cursos\Iniciante em Programação\Javascript&HTML\calculando_meu_gasto.html)
+- [Desafio Álcool ou Gasolina](Cursos\Iniciante em Programação\Javascript&HTML\desafio_alcooougasolina.html)
+- [Desafio](Cursos\Iniciante em Programação\Javascript&HTML\desafios2.html)
+
+###### _Javascript e HTML: pratique lógica com desenhos, animações e um jogo_
 
 ## Cursos
 
