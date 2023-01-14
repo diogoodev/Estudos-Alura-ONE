@@ -12,7 +12,7 @@ A tag `<h1>`envolve a tag da imagem, que é onde buscamos o conteúdo que será 
 
 ## resumindo
 
-Aprendemos mais sobree
+Aprendemos mais sobre
 
 - A base de uma página HTML
 - Lista HTML não ordenada
