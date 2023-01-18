@@ -12,7 +12,7 @@
     -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-home.css" />
     <title>Barbearia</title>
     <!-- Aqui definimos o titulo da pagina-->
   </head>
@@ -20,10 +20,20 @@
   <body>
     <header>
       <h1 class="titulo-principal">Barbearia Alura</h1>
+      <img
+        src="/Cursos/Iniciante_Em_Programação/02-Paginas_Web/Assets/logo.png"
+        alt="" />
+      <nav>
+        <ul class="menu">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="/produtos.html">Produtos</a></li>
+          <li><a href="/Contatos.html">Contato</a></li>
+        </ul>
+      </nav>
     </header>
     <img
       id="banner"
-      src="/Cursos/Iniciante em Programação/02-Paginas_Web/Assets/banner.jpg"
+      src="/Cursos/Iniciante_Em_Programação/02-Paginas_Web/Assets/banner.jpg"
       alt="Parte interna da barbearia com duas cadeiras" />
     <div class="principal">
       <!--As tags são semânticas e para cada uma delas temos um significado e um resultado diferente.
@@ -57,7 +67,7 @@
     </div>
     <div class="beneficios">
       <h3 class="titulo-centralizado">Benefícios</h3>
-      <ul>
+      <ul class="lista-beneficios">
         <li class="itens">Atendimento aos clientes</li>
         <li class="itens">Espaço Diferenciado</li>
         <li class="itens">Localização</li>
@@ -65,8 +75,14 @@
       </ul>
       <img
         class="imgbeneficios"
-        src="/Cursos/Iniciante em Programação/02-Paginas_Web/Assets/beneficios.jpg"
+        src="/Cursos/Iniciante_Em_Programação/02-Paginas_Web/Assets/beneficios.jpg"
         alt="Homem sentando na barbearia" />
     </div>
+    <footer>
+      <img
+        src="/Cursos/Iniciante_Em_Programação/02-Paginas_Web/Assets/logo-branco.png"
+        alt="logo da barbearia na cor branca" />
+      <p class="texto-rodape">&copy; Copyright Barbearia - 2023</p>
+    </footer>
   </body>
 </html>
