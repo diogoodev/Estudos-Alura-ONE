@@ -113,6 +113,7 @@ form legend {
 .enviar:hover {
   background-color: darkorange;
   transform: scale(1.2);
+  transform: rotate(70deg);
   transition: 1s;
   cursor: pointer;
 }
