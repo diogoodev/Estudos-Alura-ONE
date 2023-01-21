@@ -32,6 +32,11 @@ Com isso temos uma simples tabela.
 
 ## Deixando mais semântica
 
+Podemos separar a tabela em 3 partes, cabeçalho, conteúdo e rodapé.
+No cabeçalho de uma tabela usamos a tag `<thead>` e para especificar a célula do cabeçalho usamos a tag `<th>`
+No conteúdo de uma tabela usamos a tag `<tbody>`.
+No rodapé de uma tabela usamos a tag `<thead>`.
+
 ## Resumindo
 
 Aprendemos:
