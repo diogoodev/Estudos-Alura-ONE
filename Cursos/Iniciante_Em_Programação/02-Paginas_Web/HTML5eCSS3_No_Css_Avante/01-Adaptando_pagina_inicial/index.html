@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- Identificamos a versão do html que estamos usando com a tag de informação doctype-->
+<html lang="pt-br">
+  <!-- Usamos a tag de conteúdo html, para delimitar a area do conteúdo que será escrito em html, aqui declaramos a linguagem que será usada na pagina-->
+  <head>
+    <!-- Na tag head, colocamos as informações que queremos passar para o  navegador-->
+    <meta charset="UTF-8" />
+    <!--
+      A tag meta passamos informações para o navegador
+      Atributo charset, escolhe o dicionario que será usando
+      Valor UTF-8, especifica o conjunto de caracteres que será usado.
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Barbearia</title>
+    <!-- Aqui definimos o titulo da pagina-->
+  </head>
+  <!-- Na tag body passamos as informações que queremos exibir na pagina.-->
+  <body>
+    <header>
+      <div class="caixa">
+        <h1>
+          <!--colocando a logo no h1 para dar total importância para o conteúdo-->
+          <img
+            src="/Cursos/Iniciante_Em_Programação/02-Paginas_Web/Assets/logo.png"
+            alt="logo barbearia" />
+        </h1>
+        <nav>
+          <ul>
+            <li><a title="pagina inicial" href="index.html"> Home</a></li>
+            <li>
+              <a title="pagina de produtos" href="produtos.html"> Produtos</a>
+            </li>
+            <li>
+              <a title="pagina de contato" href="contato.html"> Contato</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <img
+      class="banner"
+      src="/Cursos/Iniciante_Em_Programação/02-Paginas_Web/Assets/banner.jpg"
+      alt="Parte interna da barbearia com duas cadeiras" />
+    <main>
+      <section class="principal">
+        <!--As tags são semânticas e para cada uma delas temos um significado e um resultado diferente.
+    Começando esse projeto com as tags h1 para o titulo e p para os parágrafos-->
+        <h2 class="titulo-principal">Sobre a Barbearia Alura</h2>
+        <!--Algumas observações sobre as tags:
+    <strong> = texto lido com entoação carregada
+<em> = texto lido com ênfase
+  Fornecem o mesmo visual que as tags <b> e <i>. Porem com melhor acessibilidade
+    -->
+        <img
+          class="utensilios"
+          src="/Cursos/Iniciante_Em_Programação/02-Paginas_Web/Assets/utensilios.jpg"
+          alt="utensílios de um barbeiro" />
+        <p>
+          Localizada no coração da cidade a
+          <strong>Barbearia Alura </strong> traz para o mercado o que há de
+          melhor para o seu cabelo e barba. Fundada em 2019, a Barbearia Alura
+          já é destaque na cidade e conquista novos clientes a cada dia.
+        </p>
+        <!--Podemos escrever o css diretamente no código html.-->
+        <p id="missao">
+          <em>
+            Nossa missão é:
+            <strong
+              >"Proporcionar auto-estima e qualidade de vida aos clientes".
+            </strong>
+          </em>
+        </p>
+        <p>
+          Oferecemos profissionais experientes e antenados às mudanças no mundo
+          da moda. O atendimento possui padrão de excelência e agilidade,
+          garantindo qualidade e satisfação dos nossos clientes.
+        </p>
+      </section>
+      <section class="beneficios">
+        <h3 class="titulo-principal">Benefícios</h3>
+        <ul class="lista-beneficios">
+          <li class="itens">Atendimento aos clientes</li>
+          <li class="itens">Espaço Diferenciado</li>
+          <li class="itens">Localização</li>
+          <li class="itens">Profissionais qualificados</li>
+        </ul>
+        <img
+          class="imgbeneficios"
+          src="/Cursos/Iniciante_Em_Programação/02-Paginas_Web/Assets/beneficios.jpg"
+          alt="Homem sentando na barbearia" />
+      </section>
+    </main>
+    <footer>
+      <img
+        src="/Cursos/Iniciante_Em_Programação/02-Paginas_Web/Assets/logo-branco.png"
+        alt="logo do rodapé" />
+      <p class="copyright">&copy; Copyright Barbearia - 2023</p>
+    </footer>
+  </body>
+</html>
