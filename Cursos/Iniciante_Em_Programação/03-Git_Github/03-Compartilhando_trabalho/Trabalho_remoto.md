@@ -36,8 +36,30 @@ Voltamos para a pasta que tínhamos criado primeiro nela executamos o comando gi
 
 ## Entendendo Github
 
+O github possui varias funcionalidades, a que vamos explorar num primeiro momento é a possibilidade de criar repositórios git.
+
+- **Criar um repositório**
+  Fazemos isso clicando no símbolo de + localizado no canto superior direito para criar um novo repositório, por meio da opção "New repository"
+- **Enviando repositório local para o github**
+  `git remote add origin git@github.com:endereço_do_repositório_que_queremos_enviar`
+  Usando esse comando vamos conseguir enviar os arquivos pro github, porem precisaremos configurar uma senha para que fique seguro.
+  Para concluir temos duas opções:
+  - `git push -u origin master`
+    -u: define que, sempre que usarmos git push e estivermos na master, enviará para origin. Após esse comando podemos usar só git push
+  - `git push origin master:` Modelo que já vimos, tradicional, que sempre devemos digitar qual o repositório e qual branch queremos enviar
+
 ## Resumindo
 
 Aprendemos:
 
-Veja o resultado [aqui](/Cursos/Iniciante_Em_Programa%C3%A7%C3%A3o/03-Git_Github/02-Iniciando/index.html)
+- O que são repositórios remotos;
+- Como criar um repositório Git sem uma cópia dos arquivos (com --bare) para ser utilizado como servidor;
+- Como adicionar links para os repositórios remotos, com o comando git remote add;
+- Como baixar um repositório pela primeira vez, clonando-o com o comando git clone;
+- Como enviar as nossas alterações para um repositório remoto, com git push;
+- Como atualizar o nosso repositório com os dados no repositório remoto, utilizando git pull;
+- O que é e para que serve o GitHub;
+- Como criar um repositório no GitHub;
+- Como adicionar um repositório do GitHub como repositório remoto.
+
+Veja o resultado [aqui](https://github.com/diogoodev/alura-git)
