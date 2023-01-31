@@ -22,4 +22,4 @@ rem Faz o commit com a mensagem "Estudos do dia $data"
 git commit -m "Estudos do dia %data%"
 
 rem Faz o push para o repositório no GitHub
-git push origin master
+git push origin main
