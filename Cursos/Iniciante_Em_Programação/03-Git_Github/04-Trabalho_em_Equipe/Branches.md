@@ -27,8 +27,19 @@ Com isso, evitamos os commits de merge. Há uma longa discussão sobre o que é 
 
 `git log --graph`: Serão exibidas linhas específicas representando o desenvolvimento
 
+### Importante
+
+Antes de enviarmos quaisquer dados e alterações, devemos garantir que estamos trabalhando com a versão mais recente do código. Isso significa que, antes do envio, precisaremos trazer este código de volta usando (git pull local master).
+
 ## Resumindo
 
 Aprendemos:
+
+- Que uma branch (ou ramo) é uma linha de commits separada, e que pode ser utilizada para desenvolver funcionalidades independentes;
+- Que com branches separados, podemos evitar que o código de uma funcionalidade interfira em outra;
+- Como trazer o trabalho realizado em uma branch para outra branch, como por exemplo, o master, através do comando git merge;
+- Que o git merge gera um novo commit, informando que houve uma mescla entre duas branches;
+- Como trazer os commits de uma branch para outra, com o git rebase
+- Que o git rebase não gera um commit de merge, simplificando o nosso log;
 
 Veja o resultado [aqui](https://github.com/diogoodev/alura-git)
