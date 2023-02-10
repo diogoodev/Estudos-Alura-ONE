@@ -1,0 +1,13 @@
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+}
+.menu-item {
+  margin-left: 15px;
+  margin-right: 15px;
+}
