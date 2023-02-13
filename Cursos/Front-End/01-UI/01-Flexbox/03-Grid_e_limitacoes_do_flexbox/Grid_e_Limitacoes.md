@@ -53,6 +53,22 @@ Propriedades do justfy-content:
 
 Dica: Evitar usar o justify quando se está construindo um grid com flexbox. Isso porque elas colocam comportamentos que não são legais para grids. Tanto space-between quanto space-around deixariam super estranha a última linha do grid caso essa tivesse menos elementos do que o total de elementos por linha.
 
+### Uso do :nth-child()
+
+Usamos esse pseudo seletor para remover espaços desnecessários em nossos elementos.
+
+```css
+.course:nth-child(3n) {
+  margin-right: 0;
+}
+```
+
+```css
+.course:nth-child(3n + 1) {
+  margin-left: 0;
+}
+```
+
 ### O projeto até aqui
 
 [Clique aqui](index.html) e veja como está ficando o nosso projeto.

@@ -1,0 +1,27 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+div .course {
+  height: 50px;
+}
+.course {
+  width: 31.3%;
+  margin: 1%;
+  background-color: green;
+}
+.course:nth-child(3n) {
+  margin-right: 0;
+}
+.course:nth-child(3n + 1) {
+  margin-left: 0;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course {
+  width: 31.3%;
+  margin: 1%;
+}
