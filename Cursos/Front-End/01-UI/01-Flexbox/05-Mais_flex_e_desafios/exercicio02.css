@@ -1,0 +1,23 @@
+.flexContainer {
+  display: flex;
+}
+.flexItem {
+  width: 200px;
+  height: 200px;
+}
+.firstRow1 {
+  background-color: brown;
+}
+.firstRow2 {
+  background-color: aqua;
+}
+.firstRow3 {
+  background-color: black;
+}
+.firstRow4 {
+  background-color: blueviolet;
+}
+
+.flexItem:first-child {
+  flex-shrink: 2;
+}

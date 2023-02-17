@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+}
+header {
+  display: flex;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+ul {
+  display: flex;
+  list-style: none;
+  width: 35vw;
+  justify-content: space-around;
+}
+.card {
+  width: 15vw;
+  margin: 15px;
+  padding: 15px;
+  color: white;
+}
+.card-info {
+  background-color: orange;
+}
+.card-promo {
+  background-color: rgb(125, 13, 13);
+}
+.card-new {
+  background-color: rgb(8, 77, 8);
+}
