@@ -16,10 +16,22 @@ ul {
   width: 35vw;
   justify-content: space-around;
 }
+.flex-container {
+  width: 60vw;
+  height: 100vw;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.flex-item {
+  height: 45%;
+}
 .card {
-  width: 15vw;
-  margin: 15px;
-  padding: 15px;
+  width: 10vw;
+  margin: 5px;
+  padding: 5px;
   color: white;
 }
 .card-info {
@@ -30,4 +42,8 @@ ul {
 }
 .card-new {
   background-color: rgb(8, 77, 8);
+}
+.card p {
+  font-size: 1.4em;
+  font-weight: bold;
 }
