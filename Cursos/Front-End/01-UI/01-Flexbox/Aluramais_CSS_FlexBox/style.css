@@ -18,12 +18,12 @@ ul {
 }
 .flex-container {
   width: 60vw;
-  height: 100vw;
+  height: 100vh;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-content: center;
 }
 .flex-item {
   height: 45%;
@@ -46,4 +46,8 @@ ul {
 .card p {
   font-size: 1.4em;
   font-weight: bold;
+}
+img {
+  width: 100px;
+  padding: 5px;
 }
