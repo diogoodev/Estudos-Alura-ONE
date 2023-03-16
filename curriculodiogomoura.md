@@ -4,17 +4,17 @@
 
 - Contato: (91) 99238-5356
 - E-mail: diogoomoura@hotmail.com
-- Endereço: Tv. Floriano Peixoto, 1680, Centro, Castanhal-PA
+- Endereço: Centro, Castanhal-PA
 
 ---
 
 ## **Resumo**
 
-Com ampla experiência em comunicação com clientes e solução de problemas, sou altamente motivado e sempre busco aperfeiçoar minhas habilidades e crescer profissionalmente. Possuo forte capacidade de liderança e gestão de equipe, além de habilidade em comunicação eficaz e resolução de conflitos. Como Promotor de Vendas (Telemarketing), busco uma oportunidade de aplicar minhas habilidades e conhecimentos para contribuir com o sucesso da empresa e me desenvolver profissionalmente.
+Sou um estudante de Licenciatura em Computação altamente motivado, com habilidades em liderança, gestão de equipes, comunicação efetiva e resolução de conflitos. Tenho forte capacidade de aprendizado e comprometimento com resultados, e estou em busca constante de crescimento pessoal e profissional. Como entusiasta da tecnologia, estou interessado em uma posição de estágio remunerado na área de T.I. na Sea Telecom, onde possa aplicar minhas habilidades e conhecimento para contribuir com o sucesso da empresa.
 
 ## **Formação**
 
-- Engenharia Civil (incompleto) - Universidade Federal do Rio Grande (FURG) - 2015-2019
+- Licenciatura em Computação - Universidade Federal do Tocantins (UFT) - 2023-2026
 - Ensino Médio Completo - 2014
 
 ---
