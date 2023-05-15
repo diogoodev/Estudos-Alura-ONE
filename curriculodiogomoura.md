@@ -10,13 +10,18 @@
 
 ## **Resumo**
 
-Sou um estudante de Licenciatura em Computação altamente motivado, com habilidades em liderança, gestão de equipes, comunicação efetiva e resolução de conflitos. Tenho forte capacidade de aprendizado e comprometimento com resultados, e estou em busca constante de crescimento pessoal e profissional. Como entusiasta da tecnologia, estou interessado em uma posição de estágio remunerado na área de T.I. na Sea Telecom, onde possa aplicar minhas habilidades e conhecimento para contribuir com o sucesso da empresa.
+Sou um estudante altamente motivado da Licenciatura em Computação, buscando uma posição de estágio remunerado em suporte em teleatendimento na empresa Nevoli. Tenho habilidades em comunicação efetiva, resolução de problemas e trabalho em equipe. Com meu comprometimento com resultados e capacidade de aprendizado rápido, estou pronto para aplicar meus conhecimentos e contribuir para o sucesso da Nevoli.
 
 ## **Formação**
 
 - Licenciatura em Computação - Universidade Federal do Tocantins (UFT) - 2023-2026
 - Ensino Médio Completo - 2014
 
+## **Cursos**
+
+### **Suporte em TI - Google (em andamento)**
+
+- Participando do curso de Suporte em TI oferecido pelo Google, adquirindo conhecimentos teóricos e práticos sobre suporte técnico, resolução de problemas e atendimento ao cliente na área de Tecnologia da Informação. O curso visa aprimorar minhas habilidades e conhecimentos específicos relacionados ao suporte em TI, contribuindo para minha capacitação profissional.
 ---
 
 ## **Experiência Profissional**
@@ -52,6 +57,7 @@ Responsável por:
 ## **Habilidades e Competências**
 
 - Inglês básico
+- Conhecimento básico de redes
 - Conhecimento avançado em informática
 - Comunicação efetiva e habilidade em resolver conflitos
 - Autodisciplina e capacidade de trabalho autônomo
